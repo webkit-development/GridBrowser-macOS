@@ -717,7 +717,7 @@
                                     <segmentedControl key="view" verticalHuggingPriority="750" id="Fz0-Ct-Czd">
                                         <rect key="frame" x="0.0" y="14" width="77" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="momentary" id="mIj-ii-1Pw">
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="texturedSquare" trackingMode="momentary" id="mIj-ii-1Pw">
                                             <font key="font" metaFont="system"/>
                                             <segments>
                                                 <segment image="NSAddTemplate" width="32"/>
@@ -734,7 +734,7 @@
                                     <segmentedControl key="view" verticalHuggingPriority="750" id="LSL-52-IOr">
                                         <rect key="frame" x="0.0" y="14" width="77" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="momentary" id="2Rk-Ek-5Xd">
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="texturedSquare" trackingMode="momentary" id="2Rk-Ek-5Xd">
                                             <font key="font" metaFont="system"/>
                                             <segments>
                                                 <segment image="NSAddTemplate" width="32"/>

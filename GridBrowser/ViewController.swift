@@ -37,14 +37,11 @@ class ViewController: NSViewController, WKNavigationDelegate {
         // Update the view, if already loaded.
         }
     }
-
-    @IBAction func navigationClicked(_ sender: NSSegmentedControl) {
-        
-    }
     
-    @IBAction func url(_ sender: NSTextField) {
-        
-    }
+
+    @IBAction func navigationClicked(_ sender: NSSegmentedControl) {}
+    
+    @IBAction func url(_ sender: NSTextField) {}
     
     @IBAction func adjustRows(_ sender: NSSegmentedCell) {
         if sender.selectSegment(withTag: 0) {
@@ -68,7 +65,7 @@ class ViewController: NSViewController, WKNavigationDelegate {
             for case let row as NSStackView in rows.arrangedSubviews {
                 row.addArrangedSubview(makeWebView())
             }
-        } else {
+        } else{
             guard let firstRow = rows.arrangedSubviews.first as? NSStackView else {return}
             guard firstRow.arrangedSubviews.count > 1 else {return}
             for case let row as NSStackView in rows.arrangedSubviews {
