@@ -9,11 +9,27 @@ import Cocoa
 import WebKit
 
 class ViewController: NSViewController, WKNavigationDelegate {
+    
+    var rows: NSStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        rows = NSStackView()
+        rows.orientation = .vertical
+        rows.distribution = .fillEqually
+        rows.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(rows)
+        
+        rows.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        rows.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        rows.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        rows.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        let column = NSStackView(views: [makeWebView()])
+        column.distribution = .fillEqually
+        
+        rows.addArrangedSubview(column)
     }
 
     override var representedObject: Any? {
