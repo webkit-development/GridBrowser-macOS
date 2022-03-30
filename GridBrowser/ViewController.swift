@@ -51,7 +51,20 @@ class ViewController: NSViewController, WKNavigationDelegate {
     }
     
     @IBAction func adjustColumns(_ sender: NSSegmentedCell) {
-    
+        if sender.selectSegment(withTag: 0) {
+            for case let row as NSStackView in rows.arrangedSubviews {
+                row.addArrangedSubview(makeWebView())
+            }
+        } else {
+            guard let firstRow = rows.arrangedSubviews.first as? NSStackView else {return}
+            guard firstRow.arrangedSubviews.count > 1 else {return}
+            for case let row as NSStackView in rows.arrangedSubviews {
+                if let last = row.arrangedSubviews.last {
+                    row.removeArrangedSubview(last)
+                    last.removeFromSuperview()
+                }
+            }
+        }
     }
     
     func makeWebView() -> NSView {
