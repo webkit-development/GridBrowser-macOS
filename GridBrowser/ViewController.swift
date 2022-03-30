@@ -47,7 +47,20 @@ class ViewController: NSViewController, WKNavigationDelegate {
     }
     
     @IBAction func adjustRows(_ sender: NSSegmentedCell) {
-    
+        if sender.selectSegment(withTag: 0) {
+            let columnCount = (rows.arrangedSubviews[0] as! NSStackView).arrangedSubviews.count
+            let viewArray = (0 ..< columnCount).map {_ in makeWebView()}
+            let row = NSStackView(views: viewArray)
+            row.distribution = .fillEqually
+            rows.addArrangedSubview(row)
+        } else {
+            guard rows.arrangedSubviews.count > 1 else {return}
+            guard let rowToRemove = rows.arrangedSubviews.last as? NSStackView else {return}
+            for cell in rowToRemove.arrangedSubviews {
+                cell.removeFromSuperview()
+            }
+            rows.removeArrangedSubview(rowToRemove)
+        }
     }
     
     @IBAction func adjustColumns(_ sender: NSSegmentedCell) {
